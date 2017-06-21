@@ -1,2 +1,55 @@
 /*  etch-a-sketch  */ 
 
+body{
+	background-color: #D8D8D8;
+}
+
+#container{
+	height: 600px;
+	width: 600px;
+	border: 1px solid #BD6BFA; 
+	margin: 50px auto;
+	padding: 0;
+}
+
+.grid-div{
+	margin: 0;
+	padding: 0;
+	outline: 1px solid white; /*#BD6BFA;*/
+	display: inline-block;
+	vertical-align: top;
+}
+
+#current-size{
+	position: relative;
+	top: -20px;
+	text-align: center;
+}
+
+
+
+input{
+	border: 1px solid #D8B4F3;
+	padding: 10px;
+	position: relative;
+	top: 30px;
+	left: 285px;
+	margin: 0px 20px;
+	display: inline-block;
+	height: 50px;
+	width: 80px;
+	background-color: #D8D8D8;
+
+}
+
+input:hover{
+	background-color: #BD6BFA;
+} 
+
+input:focus{
+	outline: 0;
+}
+
+.highlight{
+	background-color: #BD6BFA;
+}
