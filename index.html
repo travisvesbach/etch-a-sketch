@@ -5,6 +5,7 @@
 <head>
 	<title>Etch-a-sketch</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/spectrum.css">
 </head>
 <body>
 
@@ -12,7 +13,8 @@
 		<input type="submit" value="grid size" id="grid-size-button">
 		<input type="submit" value="opacity" id="opacity-button">
 		<input type="submit" value="rainbow" id="rainbow-button">
-		<input type="submit" value="color" id="color-button">
+		<input type='text' id="color"/>
+		<input type="submit" value="reset" id="reset-button">
 		<input type="submit" value="default" id="default-button">
 	</div>
 
@@ -22,6 +24,7 @@
 	<p id="current-size"></p>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/spectrum.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

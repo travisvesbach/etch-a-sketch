@@ -22,7 +22,14 @@ $(document).ready(function(){
 
   $('#default-button').on('click', defaultButton);
 
-  $('#color-button').on('click', colorButton);  
+  $('#reset-button').on('click', resetButton);  
+
+  $("#color").spectrum({
+    color: mouseColor,
+    change: function(color) {
+        mouseColor = color.toHexString();
+    }
+});
 
 });
 
@@ -83,6 +90,12 @@ function defaultButton() {
   $('#grid-div').css('opacity', '1');
   gridSize = 16;
   mouseColor = '#D8B4F3';
+  $("#color").spectrum({
+    color: mouseColor,
+    change: function(color) {
+        mouseColor = color.toHexString();
+    }
+});
   makeGrid(gridSize);
 }
 
@@ -98,7 +111,6 @@ function mouseEnter(){
   }
 }
 
-function colorButton() {
-  mouseColor = prompt("What color would you like?  Please enter a basic color or a color's hex key.", mouseColor);
+function resetButton() {
   makeGrid(gridSize);
 }

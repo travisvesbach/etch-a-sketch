@@ -33,7 +33,7 @@ input{
 	padding: 10px;
 	position: relative;
 	top: 30px;
-	left: 285px;
+	left: 220px;
 	margin: 0px 20px;
 	display: inline-block;
 	height: 50px;
@@ -52,4 +52,8 @@ input:focus{
 
 .highlight{
 	background-color: #BD6BFA;
+}
+
+.sp-replacer {
+
 }
