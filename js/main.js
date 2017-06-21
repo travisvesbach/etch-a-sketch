@@ -1,35 +1,29 @@
 // etch-a-sketch
 
 var gridSize = 16;  
-var mouseColor = '#D8B4F3';
-var outlineColor = '#BD6BFA';
-var backColor = '#D8D8D8';
+var mouseColor = '#884cb4';  //'#D8B4F3';
 
 
 $(document).ready(function(){
   makeGrid(gridSize);
   $(this).on('mouseenter', '.grid-div', mouseEnter);
 
-
   $('#grid-size-button').on('click', newGrid);
 
-
-  //opacity button
   $('#opacity-button').on('click', opacityButton);
 
-  //rainbow button
   $('#rainbow-button').on('click', rainbowButton);
-
-  $('#default-button').on('click', defaultButton);
-
-  $('#reset-button').on('click', resetButton);  
 
   $("#color").spectrum({
     color: mouseColor,
     change: function(color) {
         mouseColor = color.toHexString();
     }
-});
+  });
+
+  $('#reset-button').on('click', resetButton);  
+
+  $('#default-button').on('click', defaultButton);
 
 });
 
@@ -39,9 +33,9 @@ function makeGrid(size) {
   $('#container').empty();
   var blockSize = 600 / size;
   for (var row = 0; row < size; row++) {
-    $('#container').append('<div class="column"></div>');                          
+    $('#container').append('<div class="row"></div>');                          
     for (var column = 0; column < size ; column++) {
-      $('#container').find('.column:last').append('<div class="grid-div"></div>');       
+      $('#container').find('.row:last').append('<div class="grid-div"></div>');       
     }
   }
   $('.grid-div').css({'height': blockSize + 'px', 'width': blockSize + 'px'});
@@ -52,11 +46,9 @@ function makeGrid(size) {
   }
 }
 
-//To remove the old grid and make a new grid
+//To ask for a number and call makeGrid
 function newGrid() {
   gridSize = prompt("Please enter a number.", gridSize);
-
-//  $('#container').empty();
 
   makeGrid(gridSize);
 
@@ -84,18 +76,24 @@ function rainbowButton(){
   makeGrid(gridSize);
 }
 
+//reset button
+function resetButton() {
+  makeGrid(gridSize);
+}
+
+
 //default button
 function defaultButton() {
   $('#opacity-button, #rainbow-button, #red-button').removeClass('highlight');
   $('#grid-div').css('opacity', '1');
   gridSize = 16;
-  mouseColor = '#D8B4F3';
+  mouseColor = '#884cb4';
   $("#color").spectrum({
     color: mouseColor,
     change: function(color) {
         mouseColor = color.toHexString();
     }
-});
+  });
   makeGrid(gridSize);
 }
 
@@ -109,8 +107,4 @@ function mouseEnter(){
   if ($('#opacity-button').hasClass('highlight')) {
     $(this).css('opacity', '+=0.2');
   }
-}
-
-function resetButton() {
-  makeGrid(gridSize);
 }

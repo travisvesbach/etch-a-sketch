@@ -26,8 +26,6 @@ body{
 	text-align: center;
 }
 
-
-
 input{
 	border: 1px solid #D8B4F3;
 	padding: 10px;
@@ -52,8 +50,4 @@ input:focus{
 
 .highlight{
 	background-color: #BD6BFA;
-}
-
-.sp-replacer {
-
 }
