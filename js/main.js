@@ -38,6 +38,7 @@ function makeGrid(size) {
       $('#container').find('.row:last').append('<div class="grid-div"></div>');       
     }
   }
+  $('.row').css({'height': blockSize + 'px'});
   $('.grid-div').css({'height': blockSize + 'px', 'width': blockSize + 'px'});
   $('.column').css({'height': blockSize + 'px'})
   $('#current-size').text("The current size is " + gridSize + 'x' + gridSize + '.');
@@ -48,7 +49,11 @@ function makeGrid(size) {
 
 //To ask for a number and call makeGrid
 function newGrid() {
-  gridSize = prompt("Please enter a number.", gridSize);
+  gridSize = prompt("Please enter a number between 1 and 75", gridSize);
+
+  while(gridSize > 75 || gridSize < 1){
+    gridSize = prompt("Please enter a number.", gridSize);
+  }
 
   makeGrid(gridSize);
 
